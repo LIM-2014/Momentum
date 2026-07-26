@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 시계 */
+#localTime {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 인사말 섹션 */
+#greeting {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.greeting-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.nameForm {
+    display: flex;
+    justify-content: center;
+}
+
+.nameInput {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    text-align: center;
+    width: 280px;
+}
+
+.nameInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nameInput:focus {
+    outline: none;
+}
+
+/* 투두 섹션 */
+#todoForm {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px 0;
+}
+
+#todoInput {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#todoInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#todoInput:focus {
+    outline: none;
+}
+
+#todoList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#todoList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid white;
+    font-size: 1rem;
+}
+
+#todoList button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* 날씨 섹션 */
+#weather {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 1rem;
+    text-align: right;
+}
+
+#weather span {
+    display: block;
+    margin: 5px 0;
+}
+
+/* 명언 섹션 */
+.quote {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+#quote-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#quote-author {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* 숨김 클래스 */
+.hidden {
+    display: none;
+}
+
+#hidden-input {
+    visibility: hidden;
+}
