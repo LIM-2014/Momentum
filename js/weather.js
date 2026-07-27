@@ -3,17 +3,20 @@ const API_KEY = "ee14d076297bf7cdbbdfb9e7e3562bbf";
 function geoSuccess(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    //I tried to connect api, but it was not working. Also I couldn't do anything because it was 1:20 am. If I wake up early and if I can fix it, I will tired to fix it.
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const weather = document.querySelector("#weather span:first-child");
-            const city = document.querySelector("#city span:last-child");
-            city.innerText = data.name;
-            weather.innerText = data.weather[0].main;
+        .then((response) => response.json())
+        .then((data) => {
+            const cityElement = document.querySelector("#city");
+            const tempElement = document.querySelector("#temp");
+
+            cityElement.innerText = data.name;
+            tempElement.innerText = `${data.main.temp}°C · ${data.weather[0].main}`;
+        })
+        .catch(() => {
+            alert("날씨 정보를 불러오지 못했습니다.");
         });
-    console.log(lat, lon);
 }
 
 function geoError() {
